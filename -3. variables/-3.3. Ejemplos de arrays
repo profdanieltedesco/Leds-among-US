@@ -1,0 +1,31 @@
+//Ejercicio -3.3 A
+int dinero_en_cuenta[10] ={50,-12,30};
+
+void setup (){
+
+Serial.begin(9600);
+delay(100);
+Serial.println (String(dinero en cuenta[0]));// en el monitor serie se imprimre la posicion 0=50
+
+}
+
+void loop (){
+
+}
+
+//Ejercicio -3.3 B
+int dinero_en_cuenta[10] ={50,-12,30};
+
+void setup (){
+
+Serial.begin(9600);
+delay(100);
+
+diero_en_cuenta[0] = 10;// cambio el valor de la posición 0,por 10
+Serial.println (String(dinero en cuenta[0]));// en el monitor serie se imprimre la posicion 0=10
+
+}
+
+void loop (){
+
+}
