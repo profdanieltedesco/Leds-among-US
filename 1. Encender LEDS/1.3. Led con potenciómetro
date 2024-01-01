@@ -1,0 +1,17 @@
+/*Variación de la intensidad del LED con potenciómetro.
+Seguir las conexiones y una vez energizado, variar la 
+del potenciómetro para cambiar la intensidad del LED
+Prof. Daniel Tedesco */
+
+
+int led = 3;
+int pot = A0;
+
+void setup() {
+pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+analogWrite(led, analogRead(pot)/4);
+}
