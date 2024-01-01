@@ -1,0 +1,15 @@
+String ejemplo1 = "Hola ";
+String ejemplo2 = "Mundo!";
+String resultado;
+void setup() {
+  resultado = ejemplo1+ejemplo2;
+  Serial.begin(9600);
+  Serial.print("El resultado de la concatenacion es: ");
+  Serial.println(resultado);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
