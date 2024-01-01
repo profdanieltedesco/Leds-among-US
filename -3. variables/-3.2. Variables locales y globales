@@ -1,0 +1,18 @@
+// C++ code
+//
+String ejemplo1 = "Hola ";
+String ejemplo2 = "Mundo!"; // variables globales(fuera de las funciones)
+String resultado;
+void setup() {
+  int ejemplo1= "Chau "//variable local(dentro de la función)
+  resultado = ejemplo1+ejemplo2;
+  Serial.begin(9600);
+  Serial.print("El resultado de la concatenacion es: ");
+  Serial.println(resultado);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
