@@ -1,0 +1,31 @@
+
+int led_rojo = 6;//elegimos pines PWM ~
+int led_azul = 5;
+int led_verde = 3; // Dividimos el led RGB en 3 variables, 1 por cada pin o color
+
+void setup()
+{
+  pinMode(led_rojo, OUTPUT);
+  pinMode(led_verde, OUTPUT);
+  pinMode(led_azul, OUTPUT);//Asignamos los pineso variables como salida
+}
+
+void loop()
+{
+  analogWrite(led_rojo, 255);//Aplicamos 255 a los 3 pines para formar el color "Blanco"
+  analogWrite(led_verde,255);
+  analogWrite(led_azul, 255);
+  delay(5000);//dejamos un delay mayor para le color blanco
+  analogWrite(led_rojo, 255);//Asignamos 255 a un color y 0 a otros
+  analogWrite(led_verde,0);
+  analogWrite(led_azul, 0);
+  delay(2000);
+  analogWrite(led_rojo, 0);
+  analogWrite(led_verde,255);
+  analogWrite(led_azul, 0);
+  delay(2000);
+  analogWrite(led_rojo, 0);
+  analogWrite(led_verde,0);
+  analogWrite(led_azul, 255);
+  delay(2000);
+}
