@@ -1,0 +1,22 @@
+// Among US Básico
+//Prof. Daniel Tedesco
+
+
+int led = 13;
+int lecturasensor;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+}
+
+void loop(){
+  lecturasensor = analogRead(A0);
+  Serial.println(lecturasensor);
+  if (lecturasensor < 600) {
+    digitalWrite(led, LOW);
+  }
+    else {
+      digitalWrite (led, HIGH);}
+}
+   
