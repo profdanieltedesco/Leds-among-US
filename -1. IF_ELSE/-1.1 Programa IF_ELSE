@@ -1,0 +1,21 @@
+// C++ code//pulsar y mantener pulsado
+//
+void setup()
+{
+  pinMode(2, INPUT);//configuro el pin 2 como entrada, para leer cuando el pulsador este presionado
+  pinMode(13, OUTPUT);//configuro el pin 13 y monitoreo el led onboard
+}
+
+void loop(){
+int estadoboton = digitalRead(2);//leo el estado del pin 2, guardo el resultado en una variable
+
+  if(estadoboton == 1){//si lo que pasa en el parentesis se cumple, se ejecuta el corchete
+  delay(1000);//probar primeramente sin delay
+    digitalWrite(13, HIGH);
+  }
+  else{
+    delay(1000);
+    digitalWrite(13, LOW);
+  }
+ 
+}
