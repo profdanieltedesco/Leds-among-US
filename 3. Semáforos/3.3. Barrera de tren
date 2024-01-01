@@ -1,0 +1,47 @@
+#include <Servo.h>
+
+Servo barrera;
+int echo = 2; // Pin del sensor de ultrasonido
+int trig = 3; // Pin del sensor de ultrasonido
+long duracion, distancia;
+
+int buzzer = 4; // Pin del buzzer
+int led1 = 5; // Pin del primer LED
+int led2 = 6; // Pin del segundo LED
+
+void setup() {
+  pinMode(trig, OUTPUT); // Configura el pin del sensor de ultrasonido como salida
+  pinMode(echo, INPUT); // Configura el pin del sensor de ultrasonido como entrada
+  pinMode(buzzer, OUTPUT); // Configura el pin del buzzer como salida
+  pinMode(led1, OUTPUT); // Configura el pin del primer LED como salida
+  pinMode(led2, OUTPUT); // Configura el pin del segundo LED como salida
+  barrera.attach(9); // Configura el pin del servo como salida
+  barrera.write(90); // Inicializa el servo en 90 grados
+}
+
+void loop() {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+  
+  duracion = pulseIn(echo, HIGH);
+  distancia = duracion * 0.034 / 2;
+
+  if (distancia < 5) {
+    barrera.write(0); // Mueve el servo a 0 grados
+    digitalWrite(buzzer, HIGH); // Activa el sonido del buzzer
+    digitalWrite(led1, HIGH); // Enciende el primer LED
+    digitalWrite(led2, LOW); // Apaga el segundo LED
+    delay(500); // Espera medio segundo
+    digitalWrite(led1, LOW); // Apaga el primer LED
+    digitalWrite(led2, HIGH); // Enciende el segundo LED
+    delay(500); // Espera medio segundo
+  } else {
+    barrera.write(90); // Mueve el servo a 90 grados
+    digitalWrite(buzzer, LOW); // Desactiva el sonido del buzzer
+    digitalWrite(led1, LOW); // Apaga el primer LED
+    digitalWrite(led2, LOW); // Apaga el segundo LED
+  }
+}
